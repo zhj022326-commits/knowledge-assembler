@@ -1,6 +1,6 @@
 # no-feed-skills
 
-本仓库收录八个可独立调用的 Agent Skills。
+本仓库收录九个可独立调用的 Agent Skills。
 
 ## Skill 列表
 
@@ -52,6 +52,12 @@
 
 目录：[`skills/moral-emotion/`](skills/moral-emotion/)
 
+### video-interactive-learning
+
+把抖音、B站、YouTube 等视频链接转换成学习材料：优先取得字幕，没有字幕时进行语音识别，语音失败后只抽帧一次救稿，然后整理知识并立即开始互动学习。
+
+目录：[`skills/video-interactive-learning/`](skills/video-interactive-learning/)
+
 ## 安装
 
 以下命令安装本仓库中的全部 Skills：
@@ -70,11 +76,13 @@ npx -y skills add zhj022326-commits/no-feed-skills -g --all
 - 立即开始互动学习：使用 `$interactive-learning`。
 - 生成或检查情绪修辞角度：使用 `$eight-emotions-four-uses`。
 - 把已有内容改得更有道德情绪传播力：使用 `$moral-emotion`。
+- 从视频链接取得文字稿并开始学习：使用 `$video-interactive-learning`。
 
 ## 运行依赖
 
 - 支持 Agent Skills 的客户端
+- `video-interactive-learning` 需要 Python 3.10+ 或 uv、网络和文件读写能力；首次语音识别会下载模型。
 
 ## 发布内容
 
-仓库包含运行这些 Skills 所需的入口说明、客户端元数据和参考材料。本地自动评测结果与运行记录不包含在公开包中。
+仓库包含运行这些 Skills 所需的入口说明、客户端元数据和参考材料。除 `video-interactive-learning` 自带的脱敏测试与验证资料外，不包含本机运行记录。
