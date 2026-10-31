@@ -1,6 +1,6 @@
 # no-feed-skills
 
-本仓库收录九个可独立调用的 Agent Skills。
+本仓库收录十个可独立调用的 Agent Skills。
 
 ## Skill 列表
 
@@ -52,13 +52,26 @@
 
 目录：[`skills/moral-emotion/`](skills/moral-emotion/)
 
-### video-interactive-learning
+### video-interactive-learning（完整版）
 
 把抖音、B站、YouTube 等视频链接转换成学习材料：优先取得字幕，没有字幕时进行语音识别，语音失败后只抽帧一次救稿，然后整理知识并立即开始互动学习。
 
 当前版本为 `1.0.1`，已包含基于 yt-dlp PR #17826 的抖音 HTTP 403 兼容修复，并保持 Python 3.10+ 兼容。
 
 目录：[`skills/video-interactive-learning/`](skills/video-interactive-learning/)
+
+### video-interactive-learning-lite（轻量版）
+
+面向豆包等原生具备视频链接读取、字幕提取或语音转写能力的 Agent。它只负责文字稿质量判断、知识整理和互动教学，不携带视频下载、语音转写、抽帧或环境安装程序。
+
+目录：[`skills/video-interactive-learning-lite/`](skills/video-interactive-learning-lite/)
+
+两个版本不要同时按同一用途调用：
+
+| 版本 | 适用环境 | 视频取稿方式 | 额外依赖 |
+| --- | --- | --- | --- |
+| `video-interactive-learning` | 宿主缺少稳定取稿能力，或需要 Skill 自行兜底 | 平台字幕、语音转写，失败时一次抽帧救稿 | Python 3.10+ 或 uv，首次转写需下载模型 |
+| `video-interactive-learning-lite` | 豆包等宿主已原生具备完整视频取稿能力 | 直接调用宿主已有能力 | 无 |
 
 ## 安装
 
@@ -68,10 +81,16 @@
 npx -y skills add zhj022326-commits/no-feed-skills -g --all
 ```
 
-只安装信息流学习机：
+只安装信息流学习机完整版：
 
 ```bash
 npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning -g
+```
+
+只安装信息流学习机轻量版：
+
+```bash
+npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning-lite -g
 ```
 
 ## 使用
@@ -84,12 +103,14 @@ npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-lea
 - 立即开始互动学习：使用 `$interactive-learning`。
 - 生成或检查情绪修辞角度：使用 `$eight-emotions-four-uses`。
 - 把已有内容改得更有道德情绪传播力：使用 `$moral-emotion`。
-- 从视频链接取得文字稿并开始学习：使用 `$video-interactive-learning`。
+- 宿主需要自行提取视频文字稿时：使用完整版 `$video-interactive-learning`。
+- 豆包等宿主已经能直接取得完整视频文字稿时：使用轻量版 `$video-interactive-learning-lite`。
 
 ## 运行依赖
 
 - 支持 Agent Skills 的客户端
 - `video-interactive-learning` 需要 Python 3.10+ 或 uv、网络和文件读写能力；首次语音识别会下载模型。
+- `video-interactive-learning-lite` 不携带代码或依赖，但宿主必须原生支持从视频链接取得完整文字稿。
 
 ## 发布内容
 
