@@ -26,7 +26,7 @@
 
 检查文章中作者与目标观众的战队关系，找出把目标观众变成批评、贬低或教育对象的表达，并在保留观点、攻击力和语言风格的前提下改写。
 
-目录：[`skills/三分法/`](skills/三分法/)
+目录：[`skills/three-part-method/`](skills/three-part-method/)
 
 ### content-production
 
@@ -59,7 +59,7 @@ npx -y skills add zhj022326-commits/no-feed-skills -g --all
 - 研究问题并组装文章：使用 `$knowledge-assembler`。
 - 还原第一人称自述：使用 `$self-narrative-restoration`。
 - 维护人生档案：使用 `$life-archive`。
-- 检查文案是否误伤目标观众：使用 `$三分法`。
+- 检查文案是否误伤目标观众：使用 `$three-part-method`。
 - 评估开口、寻找理论或把观点变成开口：使用 `$content-production`。
 - 立即开始互动学习：使用 `$interactive-learning`。
 - 生成或检查情绪修辞角度：使用 `$eight-emotions-four-uses`。
