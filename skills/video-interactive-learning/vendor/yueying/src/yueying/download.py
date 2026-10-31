@@ -59,6 +59,9 @@ def _pick_sub_langs(info: dict) -> tuple:
 def list_entries(url: str, cookies_from_browser=None, log=print) -> list:
     """链接是分 P / 合集 / 播放列表时，列出里面每个视频的链接和标题；普通链接就返回它自己。"""
     import yt_dlp
+    from .douyin_pr17826 import apply as apply_douyin_pr17826
+
+    apply_douyin_pr17826()
 
     opts = {"quiet": True, "no_warnings": True, "noplaylist": False, "extract_flat": "in_playlist",
             "logger": _YtDlpLogger(log), "socket_timeout": SOCKET_TIMEOUT}
@@ -86,6 +89,9 @@ def download(url: str, out_dir: str, cookies_from_browser=None, log=print,
     video download remains unchanged when frames are requested.
     """
     import yt_dlp
+    from .douyin_pr17826 import apply as apply_douyin_pr17826
+
+    apply_douyin_pr17826()
 
     os.makedirs(out_dir, exist_ok=True)
     common = {

@@ -56,6 +56,8 @@
 
 把抖音、B站、YouTube 等视频链接转换成学习材料：优先取得字幕，没有字幕时进行语音识别，语音失败后只抽帧一次救稿，然后整理知识并立即开始互动学习。
 
+当前版本为 `1.0.1`，已包含基于 yt-dlp PR #17826 的抖音 HTTP 403 兼容修复，并保持 Python 3.10+ 兼容。
+
 目录：[`skills/video-interactive-learning/`](skills/video-interactive-learning/)
 
 ## 安装
@@ -64,6 +66,12 @@
 
 ```bash
 npx -y skills add zhj022326-commits/no-feed-skills -g --all
+```
+
+只安装信息流学习机：
+
+```bash
+npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning -g
 ```
 
 ## 使用

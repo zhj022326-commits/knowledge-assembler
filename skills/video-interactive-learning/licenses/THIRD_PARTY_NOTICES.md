@@ -15,7 +15,10 @@ These packages are resolved at install/run time and are not copied into this Ski
 
 - faster-whisper — MIT
 - PyAV — BSD-3-Clause (constrained to `<19` for faster-whisper compatibility)
-- yt-dlp — The Unlicense
+- yt-dlp — The Unlicense. The Douyin compatibility module includes code
+  transplanted from upstream PR #17826 at immutable commit
+  `viking1304/yt-dlp@728fe46fbaa97d6f03efcaf9e766d4db63338b8d`; the PR was not
+  yet included in an official release when this package was built.
 - imageio-ffmpeg — BSD-2-Clause
 - Pillow — HPND / MIT-CMU style license
 - Model Context Protocol Python SDK — MIT

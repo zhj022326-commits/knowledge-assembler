@@ -3,8 +3,9 @@ name: video-interactive-learning
 description: 从抖音、B站、YouTube 等视频链接优先取得完整平台字幕或语音文字稿；语音转写失败时只抽帧一次，从字幕、PPT、板书等画面文字中救稿，再把可用内容整理成忠实于原视频的学习材料并立即开始互动学习。用户发送视频链接并希望学习、理解、复习或取得课程文字内容时使用；不用于单纯下载视频或常规画面分析。
 license: "MIT；第三方说明见 licenses/THIRD_PARTY_NOTICES.md，内置阅影代码沿用其 MIT License。"
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   upstream-yueying-commit: "e8fb72eabf9a2193b8d8cf5ce4e5c17de4edbcfe"
+  yt-dlp-douyin-fix: "PR-17826@728fe46fbaa97d6f03efcaf9e766d4db63338b8d"
 ---
 
 # 信息流学习机
@@ -52,7 +53,7 @@ uv run --project <skill目录>/vendor/yueying python <skill目录>/scripts/extra
 这条命令的固定策略是：
 
 - 有可用平台字幕：只下载字幕，不下载视频。
-- 没有可用字幕：只下载最佳音频，用 faster-whisper 转写，不下载画面。
+- 没有可用字幕：优先下载最佳纯音频，用 faster-whisper 转写；平台只提供音视频合并流时，允许下载含音轨的媒体流，但仍不抽帧、不做画面分析，并在转写后清理临时媒体。
 - 默认模型为 `auto`；CPU 使用 small，GPU 使用 large-v3-turbo。用户没有要求时不要擅自改成更大的模型反复跑。
 - 保留 `raw/transcript.txt`、`raw/transcript.srt`、`raw/report.md`、`raw/manifest.json`。
 - 命令失败或返回 `no_transcript` 时，不自动重新运行同一命令。

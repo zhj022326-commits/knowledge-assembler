@@ -10,5 +10,12 @@ Minimal integration changes:
 4. Allowed the CLI to process a subtitle-only result without a media file and skip ffmpeg probing in that case.
 5. Expanded recognized media extensions to include common audio containers used by yt-dlp.
 6. Pinned `av<19` because PyAV 19 removed the `metadata_errors` argument still used by faster-whisper 1.2.1.
+7. Transplanted the Douyin extractor changes from upstream yt-dlp PR #17826 at
+   immutable commit `728fe46fbaa97d6f03efcaf9e766d4db63338b8d` into
+   `src/yueying/douyin_pr17826.py`. The compatibility patch generates required
+   cookies, signs the aweme detail query, passes `aid=6383`, and adds the CDN
+   Referer. It patches only `DouyinIE`, is idempotent, and becomes a no-op once
+   an official yt-dlp release exposes the same implementation. Keeping the
+   released yt-dlp dependency preserves Yueying's Python 3.10 compatibility.
 
 The original full video/keyframe behavior remains available and is used by the one-shot frame rescue path.
