@@ -1,6 +1,6 @@
 # no-feed-skills
 
-本仓库收录七个可独立调用的 Agent Skills。
+本仓库收录八个可独立调用的 Agent Skills。
 
 ## Skill 列表
 
@@ -46,6 +46,12 @@
 
 目录：[`skills/eight-emotions-four-uses/`](skills/eight-emotions-four-uses/)
 
+### moral-emotion
+
+根据《道德情绪传播模型》改写用户已有的观点、句子、故事或文案，提高道德情绪感染力和传播价值，并在每次改稿后提供可继续选择的创作方向。
+
+目录：[`skills/moral-emotion/`](skills/moral-emotion/)
+
 ## 安装
 
 以下命令安装本仓库中的全部 Skills：
@@ -63,6 +69,7 @@ npx -y skills add zhj022326-commits/no-feed-skills -g --all
 - 评估开口、寻找理论或把观点变成开口：使用 `$content-production`。
 - 立即开始互动学习：使用 `$interactive-learning`。
 - 生成或检查情绪修辞角度：使用 `$eight-emotions-four-uses`。
+- 把已有内容改得更有道德情绪传播力：使用 `$moral-emotion`。
 
 ## 运行依赖
 
