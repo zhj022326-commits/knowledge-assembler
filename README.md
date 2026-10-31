@@ -77,7 +77,9 @@
 
 ## 安装
 
-以下命令安装本仓库中的全部 Skills：
+以下命令显式指定安装目标，适合终端、脚本和无终端的 AI 后台任务。只需要某一个 Skill 时，不要使用 `--all`：它会安装仓库中的全部十个 Skills。
+
+安装本仓库中的全部 Skills 到安装工具支持的全部 Agent：
 
 ```bash
 npx -y skills add zhj022326-commits/no-feed-skills -g --all
@@ -86,14 +88,30 @@ npx -y skills add zhj022326-commits/no-feed-skills -g --all
 只安装信息流学习机完整版：
 
 ```bash
-npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning -g
+npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning --agent "*" -g
 ```
 
 只安装信息流学习机轻量版：
 
 ```bash
-npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning-lite -g
+npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning-lite --agent "*" -g
 ```
+
+若只使用一个 Agent，优先把 `"*"` 改成其名称，减少不必要的安装操作。例如只把轻量版装到 Cursor：
+
+```bash
+npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-learning-lite --agent cursor -g
+```
+
+后台或无终端环境不要省略 `--agent`，否则安装工具可能停在“选择 Agent”界面。`npx -y` 只跳过 npx 自身的确认；即使加上安装工具的 `-y`，也不要依赖它替你选择 Agent。`--agent "*"` 仅指该工具支持的 Agent，不代表豆包等所有平台都能通过这条命令安装。
+
+如果 npx 冷启动慢，可以跳过 npx，手动取得仓库：
+
+```bash
+git clone --depth 1 https://github.com/zhj022326-commits/no-feed-skills.git
+```
+
+然后把 `skills/<skill-name>/` 整个目录复制到目标 Agent 的技能目录，保留其中的脚本和参考文件。豆包等要求上传文件的平台，应按其自身导入方式使用轻量版 ZIP。
 
 ## 使用
 
