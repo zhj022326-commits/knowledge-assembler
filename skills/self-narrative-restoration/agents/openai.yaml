@@ -1,0 +1,4 @@
+interface:
+  display_name: "自我叙事还原"
+  short_description: "还原第一人称自述中的自我美化、利益包装和叙事越权"
+  default_prompt: "请使用 $self-narrative-restoration 还原这段第一人称自述。"
