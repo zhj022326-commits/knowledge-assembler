@@ -1,4 +1,2 @@
-# sdist: ship the complete test suite (conftest + fixtures), not just tests/test_*.py
-graft tests
 include CHANGELOG.md SECURITY.md llms-install.md server.json
 global-exclude __pycache__ *.py[cod]

@@ -17,5 +17,9 @@ Minimal integration changes:
    Referer. It patches only `DouyinIE`, is idempotent, and becomes a no-op once
    an official yt-dlp release exposes the same implementation. Keeping the
    released yt-dlp dependency preserves Yueying's Python 3.10 compatibility.
+8. The public Agent Skill package omits upstream CI configuration, tests, test
+   media, generated sample output, demo images, and developer-only documents to
+   reduce installation time. Runtime source, CLI/MCP integrations, dependency
+   declarations, licenses, and all video-processing behavior are retained.
 
 The original full video/keyframe behavior remains available and is used by the one-shot frame rescue path.

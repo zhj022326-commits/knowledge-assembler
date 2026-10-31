@@ -63,10 +63,9 @@ Notes:
   call `watch_video` again with the same `video` whenever the reply starts with `RUNNING`.
 - The five tools in `autoApprove` are read-only (they only read files already produced);
   `watch_video` is deliberately left out so the user confirms each new video.
-- If Cline reports `spawn uvx ENOENT`, replace `"command": "uvx"` with the absolute path of `uvx`
+- If Cline reports `spawn uvx ENOENT`, replace `"command": "uvx"` with the path of `uvx`
   (`where uvx` on Windows, `which uvx` elsewhere; the client-configuration block that
-  `uvx yueying mcp --setup` prints already uses it). Windows example:
-  `C:\\Users\\<you>\\.local\\bin\\uvx.exe` (JSON needs the doubled backslashes).
+  `uvx yueying mcp --setup` prints already uses it). JSON needs doubled backslashes in a Windows path.
 - Without uv, use `"command": "<absolute path to yueying-mcp>"` and drop `args` (the path is printed
   by `yueying mcp --setup`; on Windows it ends in `Scripts\\yueying-mcp.exe`).
 - Optional environment variables (add to `env`): `YUEYING_OUT_DIR` (results folder, default

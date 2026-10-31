@@ -1,4 +1,4 @@
 interface:
-  display_name: "信息流学习机"
+  display_name: "video-interactive-learning（信息流学习机）"
   short_description: "优先提取视频文字稿，失败时抽帧救稿，并立即互动学习"
   default_prompt: "使用 $video-interactive-learning，从这个视频链接优先取得完整文字稿，必要时只抽帧一次救稿，整理后立即开始互动学习。"

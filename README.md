@@ -58,6 +58,8 @@
 
 当前版本为 `1.0.1`，已包含基于 yt-dlp PR #17826 的抖音 HTTP 403 兼容修复，并保持 Python 3.10+ 兼容。
 
+公开包只保留运行源码、依赖、许可证和必要说明；上游测试媒体、演示图片、测试套件及开发工程文件不随 Skill 下载。
+
 目录：[`skills/video-interactive-learning/`](skills/video-interactive-learning/)
 
 ### video-interactive-learning-lite（轻量版）
@@ -114,4 +116,4 @@ npx -y skills add zhj022326-commits/no-feed-skills --skill video-interactive-lea
 
 ## 发布内容
 
-仓库包含运行这些 Skills 所需的入口说明、客户端元数据和参考材料。除 `video-interactive-learning` 自带的脱敏测试与验证资料外，不包含本机运行记录。
+仓库只包含运行这些 Skills 所需的入口说明、运行代码、依赖声明、许可证和参考材料，不包含测试媒体、演示输出、本机运行记录或私密配置。
