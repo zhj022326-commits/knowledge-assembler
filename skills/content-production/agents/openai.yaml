@@ -1,0 +1,4 @@
+interface:
+  display_name: "内容生产"
+  short_description: "评估开口、为现象寻找理论，或把观点转换成有观看动机的开口"
+  default_prompt: "请使用 $content-production 评估这个开口，生成新的参考方向；如果我要求找理论，再切换到理论检索。"

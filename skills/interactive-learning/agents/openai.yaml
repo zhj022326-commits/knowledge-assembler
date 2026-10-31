@@ -1,0 +1,4 @@
+interface:
+  display_name: "互动学习"
+  short_description: "根据材料或主题，在领学、启发、测验、实践与复述之间切换"
+  default_prompt: "请使用 $interactive-learning 带我从这个材料或主题开始互动学习。"

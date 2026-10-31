@@ -1,0 +1,4 @@
+interface:
+  display_name: "八情四用"
+  short_description: "用八种情绪与四种传播用途生成、诊断或转换观点型表达"
+  default_prompt: "请使用 $eight-emotions-four-uses 为这个观点生成不同的情绪修辞角度。"
