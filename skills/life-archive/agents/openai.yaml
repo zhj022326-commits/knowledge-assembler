@@ -1,0 +1,4 @@
+interface:
+  display_name: "人生档案"
+  short_description: "归档个人经历并开展主动访谈"
+  default_prompt: "Use $life-archive to archive this conversation now. If this is the first use and no archive location is set, initialize it by asking me where to save the archive, then continue."

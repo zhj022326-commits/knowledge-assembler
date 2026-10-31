@@ -1,6 +1,6 @@
-# knowledge-assembler
+# no-feed-skills
 
-本仓库收录两个可独立调用的 Agent Skills。
+本仓库收录三个可独立调用的 Agent Skills。
 
 ## Skill 列表
 
@@ -16,18 +16,25 @@
 
 目录：[`skills/self-narrative-restoration/`](skills/self-narrative-restoration/)
 
+### life-archive
+
+维护用户可编辑的 Markdown 人生档案；只在用户明确要求归档当前对话或启动人生访谈时使用。
+
+目录：[`skills/life-archive/`](skills/life-archive/)
+
 ## 安装
 
 以下命令安装本仓库中的全部 Skills：
 
 ```bash
-npx -y skills add zhj022326-commits/knowledge-assembler -g --all
+npx -y skills add zhj022326-commits/no-feed-skills -g --all
 ```
 
 ## 使用
 
 - 研究问题并组装文章：使用 `$knowledge-assembler`。
 - 还原第一人称自述：使用 `$self-narrative-restoration`。
+- 维护人生档案：使用 `$life-archive`。
 
 ## 运行依赖
 
@@ -35,4 +42,4 @@ npx -y skills add zhj022326-commits/knowledge-assembler -g --all
 
 ## 发布内容
 
-仓库包含运行这些 Skills 所需的入口说明、客户端元数据和参考材料。本地评测样本与运行记录不包含在公开包中。
+仓库包含运行这些 Skills 所需的入口说明、客户端元数据和参考材料。本地自动评测结果与运行记录不包含在公开包中。
